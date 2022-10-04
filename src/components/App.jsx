@@ -9,6 +9,7 @@ import Layout from './Page/Layout.jsx';
 import Auth from './Auth/Auth.jsx';
 import AuthForm from './Auth/AuthForm.jsx';
 import UserProvider from '../state/UserContext.jsx';
+import ProtectedRoute from './Auth/ProtectedRoute.jsx';
 
 export default function App() {
   return (
@@ -23,8 +24,11 @@ export default function App() {
             />
           </Route>
 
-          <Route element={<Layout />}>
-            <Route index element={<Dashboard />} />
+          <Route element={<ProtectedRoute />}>
+            <Route element={<Layout />}>
+              <Route index element={<Dashboard />} />
+              {/* more pages here */}
+            </Route>
           </Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
