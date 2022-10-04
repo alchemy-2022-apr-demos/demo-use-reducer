@@ -1,8 +1,8 @@
 // import { useParams } from 'react-router-dom';
 import { Link, useParams } from 'react-router-dom';
 import { useList } from '../../state/ListsContext.jsx';
-import { FormButton } from '../Forms/FormControls.jsx';
 import ItemForm from './ItemForm.jsx';
+import ListItem from './ListItem.jsx';
 import styles from './ShoppingList.css';
 
 export function ShoppingList() {
@@ -45,32 +45,5 @@ export function ShoppingList() {
         ))}
       </ul>
     </section>
-  );
-}
-
-function ListItem({ item, onBuy, onRemove }) {
-  const { bought, qty, description } = item;
-
-  return (
-    <li className={styles.ListItem}>
-      {bought ? (
-        <span className={styles.Bought}>✔️</span>
-      ) : (
-        <FormButton onClick={() => onBuy(item)} icon>
-          💰
-        </FormButton>
-      )}
-
-      <span>
-        {qty} {description}
-      </span>
-
-      <button
-        className={styles.RemoveButton}
-        onClick={() => onRemove(item)}
-      >
-        🗑
-      </button>
-    </li>
   );
 }

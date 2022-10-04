@@ -1,0 +1,17 @@
+.ListItem {
+  display: grid;
+  grid-template-columns: 50px 1fr auto;
+  grid-auto-rows: 40px;
+  align-items: center;
+  gap: 10px;
+
+  .RemoveButton {
+    padding: 5px;
+    border: 1px dashed var(--light-accent-color);
+  }
+
+  .Bought {
+    display: grid;
+    place-self: center;
+  }
+}
