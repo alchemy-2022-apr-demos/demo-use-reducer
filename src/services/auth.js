@@ -24,3 +24,24 @@ export async function verifyUser() {
   response.user = response.data;
   return response;
 }
+
+const USER_KEY = 'USER';
+
+export function storeLocalUser(user) {
+  if (user) {
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
+  } else {
+    localStorage.removeItem(USER_KEY);
+  }
+}
+
+export function getLocalUser() {
+  const json = localStorage.getItem(USER_KEY);
+  try {
+    if (json) {
+      return JSON.parse(json);
+    }
+  } catch (e) {
+    storeLocalUser();
+  }
+}

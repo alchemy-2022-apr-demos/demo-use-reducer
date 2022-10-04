@@ -5,6 +5,7 @@ import styles from './Auth.css';
 export default function Auth() {
   const user = useUser();
 
+  console.log('Auth component');
   // TODO: handle cleaver redirect to page that got us here
   if (user) return <Navigate to="/" />;
 

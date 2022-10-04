@@ -5,16 +5,19 @@ import {
   useState,
 } from 'react';
 import {
+  getLocalUser,
   signInUser,
   signOutUser,
   signUpUser,
+  storeLocalUser,
   verifyUser,
 } from '../services/auth.js';
 
-export const UserContext = createContext();
+const UserContext = createContext();
 
 export default function UserProvider({ children }) {
-  const [user, setUser] = useState();
+  const localUser = getLocalUser();
+  const [user, setUserState] = useState(localUser);
 
   const verify = async () => {
     const response = await verifyUser();
@@ -24,6 +27,11 @@ export default function UserProvider({ children }) {
   useEffect(() => {
     verify();
   }, []);
+
+  const setUser = (user) => {
+    storeLocalUser(user);
+    setUserState(user);
+  };
 
   const value = {
     user,

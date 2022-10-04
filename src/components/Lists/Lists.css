@@ -1,0 +1,9 @@
+.AddForm {
+  display: flex;
+  align-items: flex-end;
+}
+
+.Lists {
+  display: grid;
+  gap: 20px;
+}

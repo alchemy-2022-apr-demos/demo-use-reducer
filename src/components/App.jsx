@@ -10,6 +10,9 @@ import Auth from './Auth/Auth.jsx';
 import AuthForm from './Auth/AuthForm.jsx';
 import UserProvider from '../state/UserContext.jsx';
 import ProtectedRoute from './Auth/ProtectedRoute.jsx';
+import { ShoppingList } from './LIsts/ShoppingList.jsx';
+import { Lists } from './LIsts/Lists.jsx';
+import ListsProvider from '../state/ListsContext.jsx';
 
 export default function App() {
   return (
@@ -27,7 +30,12 @@ export default function App() {
           <Route element={<ProtectedRoute />}>
             <Route element={<Layout />}>
               <Route index element={<Dashboard />} />
-              {/* more pages here */}
+              <Route element={<ListsProvider />}>
+                <Route path="lists">
+                  <Route index element={<Lists />} />
+                  <Route path=":id" element={<ShoppingList />} />
+                </Route>
+              </Route>
             </Route>
           </Route>
 
