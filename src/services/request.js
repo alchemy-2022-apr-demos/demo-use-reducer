@@ -5,13 +5,14 @@ async function doFetch(url, method, body) {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
+    credentials: 'include',
   };
 
   if (body) options.body = JSON.stringify(body);
 
   const res = await fetch(url, options);
 
-  const resBody = res.json();
+  const resBody = await res.json();
   const error = res.ok ? null : resBody;
   const data = res.ok ? resBody : null;
 

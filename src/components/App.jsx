@@ -8,22 +8,28 @@ import Dashboard from './Dashboard/Dashboard.jsx';
 import Layout from './Page/Layout.jsx';
 import Auth from './Auth/Auth.jsx';
 import AuthForm from './Auth/AuthForm.jsx';
+import UserProvider from '../state/UserContext.jsx';
 
 export default function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="auth" element={<Auth />}>
-          <Route index element={<AuthForm mode="signin" />} />
-          <Route path="signup" element={<AuthForm mode="signup" />} />
-        </Route>
+      <UserProvider>
+        <Routes>
+          <Route path="auth" element={<Auth />}>
+            <Route index element={<AuthForm mode="signin" />} />
+            <Route
+              path="signup"
+              element={<AuthForm mode="signup" />}
+            />
+          </Route>
 
-        <Route element={<Layout />}>
-          <Route index element={<Dashboard />} />
-        </Route>
+          <Route element={<Layout />}>
+            <Route index element={<Dashboard />} />
+          </Route>
 
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </UserProvider>
     </Router>
   );
 }

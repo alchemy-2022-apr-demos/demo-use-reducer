@@ -47,3 +47,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
+
+:global(.error) {
+  color: red;
+  min-height: 1em;
+}

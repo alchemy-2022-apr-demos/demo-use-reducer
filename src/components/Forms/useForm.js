@@ -1,15 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function getValue(target) {
   return target.type === 'checkbox' ? target.checked : target.value;
 }
 
-export function useForm(formData) {
-  const [data, setData] = useState(formData ?? {});
-
-  useEffect(() => {
-    setData(formData ?? {});
-  }, [formData]);
+export function useForm(initialData) {
+  const [data, setData] = useState(initialData);
 
   const handleChange = ({ target }) => {
     setData((data) => ({
