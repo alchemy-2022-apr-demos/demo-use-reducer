@@ -15,7 +15,7 @@ import {
 
 const ListsContext = createContext();
 
-export default function ListsProvider() {
+export default function ListsProvider({ children }) {
   const [lists, setLists] = useState(null);
   const [listsById, setListsById] = useState({});
 
@@ -68,7 +68,7 @@ export default function ListsProvider() {
 
   return (
     <ListsContext.Provider value={value}>
-      <Outlet />
+      {children || <Outlet />}
     </ListsContext.Provider>
   );
 }
