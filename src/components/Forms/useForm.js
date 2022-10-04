@@ -5,7 +5,7 @@ function getValue(target) {
 }
 
 export function useForm(initialData) {
-  const [data, setData] = useState(initialData);
+  const [data, setData] = useState({ ...initialData });
 
   const handleChange = ({ target }) => {
     setData((data) => ({
@@ -14,5 +14,7 @@ export function useForm(initialData) {
     }));
   };
 
-  return [data, handleChange];
+  const reset = () => setData({ ...initialData });
+
+  return [data, handleChange, reset];
 }

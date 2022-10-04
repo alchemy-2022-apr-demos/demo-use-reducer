@@ -4,7 +4,7 @@
   font-size: 0.95em;
   letter-spacing: 1px;
 
-  &.Required::after {
+  &:not(:empty).Required::after {
     content: ' *';
     position: relative;
     top: -3px;

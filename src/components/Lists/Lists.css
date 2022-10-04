@@ -1,9 +1,12 @@
-.AddForm {
-  display: flex;
-  align-items: flex-end;
-}
-
 .Lists {
   display: grid;
   gap: 20px;
+
+  ul {
+    padding: 20px;
+    background: var(--offset-color);
+    width: 400px;
+    display: grid;
+    gap: 20px;
+  }
 }

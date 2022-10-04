@@ -10,8 +10,8 @@ import Auth from './Auth/Auth.jsx';
 import AuthForm from './Auth/AuthForm.jsx';
 import UserProvider from '../state/UserContext.jsx';
 import ProtectedRoute from './Auth/ProtectedRoute.jsx';
-import { ShoppingList } from './LIsts/ShoppingList.jsx';
-import { Lists } from './LIsts/Lists.jsx';
+import { ShoppingList } from './Lists/ShoppingList.jsx';
+import { Lists } from './Lists/Lists.jsx';
 import ListsProvider from '../state/ListsContext.jsx';
 
 export default function App() {

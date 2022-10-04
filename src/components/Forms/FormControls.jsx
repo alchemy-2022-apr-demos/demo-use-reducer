@@ -70,9 +70,13 @@ export function CheckboxControl({
   );
 }
 
-export function FormButton({ children, ...rest }) {
+export function FormButton({ children, icon, ...rest }) {
+  const className = classnames(styles.FormButton, {
+    [styles.Icon]: icon,
+  });
+
   return (
-    <button className={styles.FormButton} {...rest}>
+    <button className={className} {...rest}>
       {children}
     </button>
   );
