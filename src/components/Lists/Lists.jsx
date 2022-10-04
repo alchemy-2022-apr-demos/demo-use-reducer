@@ -22,9 +22,7 @@ export function Lists() {
         {lists.map((list) => {
           return (
             <li key={list.id}>
-              <Link to={`${list.id}`}>
-                {list.name} ({list.id})
-              </Link>
+              <Link to={`${list.id}`}>{list.name}</Link>
             </li>
           );
         })}
