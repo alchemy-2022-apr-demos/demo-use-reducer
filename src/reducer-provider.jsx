@@ -2,9 +2,12 @@ import { useMemo, useReducer, createContext } from 'react';
 import appReducer from './reducers/app-reducer';
 
 const initialState = {
-  name: 'Astrophe',
-  lives: 9,
-  status: 'alive',
+  cat: {
+    name: 'Astrophe',
+    lives: 9,
+    status: 'alive',
+  },
+  lists: [],
 }
 
 export const Context = createContext({
