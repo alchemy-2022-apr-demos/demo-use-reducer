@@ -13,12 +13,15 @@ import ProtectedRoute from './Auth/ProtectedRoute.jsx';
 import { ShoppingList } from './Lists/ShoppingList.jsx';
 import { Lists } from './Lists/Lists.jsx';
 import ListsProvider from '../state/ListsContext.jsx';
+import Reduced from '../reducer-provider.jsx'
+import Cat from './Cat'
 
 export default function App() {
-  return (
+  return <Reduced>
     <Router>
       <UserProvider>
         <Routes>
+          <Route path="cat" element={<Cat />} />
           <Route path="auth" element={<Auth />}>
             <Route index element={<AuthForm mode="signin" />} />
             <Route
@@ -43,5 +46,5 @@ export default function App() {
         </Routes>
       </UserProvider>
     </Router>
-  );
+  </Reduced>
 }
