@@ -8,7 +8,7 @@ const initialState = {
     status: 'alive',
   },
   lists: [],
-}
+};
 
 export const Context = createContext({
   state: initialState,
@@ -21,5 +21,5 @@ export default function Reduced(props) {
   const contextValue = useMemo(() => ({ state, dispatch }),  [state, dispatch]);
   return <Context.Provider value={contextValue}>
     {props.children}
-  </Context.Provider>
+  </Context.Provider>;
 }

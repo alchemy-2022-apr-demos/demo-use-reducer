@@ -13,8 +13,8 @@ import ProtectedRoute from './Auth/ProtectedRoute.jsx';
 import { ShoppingList } from './Lists/ShoppingList.jsx';
 import { Lists } from './Lists/Lists.jsx';
 import ListsProvider from '../state/ListsContext.jsx';
-import Reduced from '../reducer-provider.jsx'
-import Cat from './Cat'
+import Reduced from '../reducer-provider.jsx';
+import Cat from './Cat';
 
 export default function App() {
   return <Reduced>
@@ -46,5 +46,5 @@ export default function App() {
         </Routes>
       </UserProvider>
     </Router>
-  </Reduced>
+  </Reduced>;
 }

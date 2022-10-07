@@ -5,8 +5,8 @@ export const catReducer = (state, action) => {
       ...state,
       lives: newLives,
       status: newLives < 1 ? 'dead' : 'alive',
-    }
+    };
   } else {
     return state;
   }
-}
+};

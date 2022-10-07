@@ -1,19 +1,19 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { addCatLifeAction, removeCatLifeAction } from '../actions/cat.js';
-import { Context as ReducerContext } from '../reducer-provider.jsx'
+import { Context as ReducerContext } from '../reducer-provider.jsx';
 
 export default function Catponent() {
   const { state, dispatch } = useContext(ReducerContext);
-  const removeOneLife = (e) => {
+  const removeOneLife = (_e) => {
     dispatch(removeCatLifeAction(1));
-  }
-  const removeFiveLives = (e) => {
+  };
+  const removeFiveLives = (_e) => {
     dispatch(removeCatLifeAction(5));
-  }
-  const addOneLife = (e) => {
+  };
+  const addOneLife = (_e) => {
     dispatch(addCatLifeAction(1));
-  }
-  
+  };
+
   return <article>
     <dl>
       <dt>Name</dt>
@@ -28,5 +28,5 @@ export default function Catponent() {
       <button onClick={removeFiveLives}>-5 lives</button>
       <button onClick={addOneLife}>+1 life</button>
     </fieldset>
-  </article>
+  </article>;
 }

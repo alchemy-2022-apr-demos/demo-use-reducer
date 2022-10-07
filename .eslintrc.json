@@ -65,7 +65,9 @@
     "jsx-quotes": "error",
     "babel/no-invalid-this": 1,
     "babel/semi": 0,
-    "react/jsx-uses-react": "off",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off"
   }

@@ -4,7 +4,7 @@ import { useList } from '../../state/ListsContext.jsx';
 import ItemForm from './ItemForm.jsx';
 import ListItem from './ListItem.jsx';
 import styles from './ShoppingList.css';
-import { Context as ReducerContext } from '../../reducer-provider.jsx'
+import { Context as ReducerContext } from '../../reducer-provider.jsx';
 import { getListsAction } from '../../actions/lists.js';
 import { dispatchAddItemToList } from '../../actions/list-items.js';
 
@@ -14,7 +14,7 @@ export function ShoppingList() {
   useEffect(() => {
     getListsAction(dispatch);
   }, []);
-  const list = state.lists.find(l => l.id == id)
+  const list = state.lists.find(l => l.id == id);
   const { removeItem, buyItem } = useList(id);
 
   if (!list) return null;

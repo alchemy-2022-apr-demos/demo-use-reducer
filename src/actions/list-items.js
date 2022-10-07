@@ -1,7 +1,7 @@
-import { createListItem } from "../services/lists";
+import { createListItem } from '../services/lists';
 
 export const dispatchAddItemToList = async (dispatch, listId, item) => {
-  dispatch({ type: 'create-list-item-start'});
+  dispatch({ type: 'create-list-item-start' });
   const { data, error } = await createListItem(listId, item);
 
 
@@ -13,4 +13,4 @@ export const dispatchAddItemToList = async (dispatch, listId, item) => {
   if (data) {
     dispatch({ type: 'create-list-item-success', item: data });
   }
-}
+};

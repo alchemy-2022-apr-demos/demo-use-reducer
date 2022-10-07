@@ -1,5 +1,5 @@
-import { catReducer } from "./cat";
-import { listReducer } from "./list";
+import { catReducer } from './cat';
+import { listReducer } from './list';
 
 export default function appReducer(state, action) {
   const cat = catReducer(state.cat, action);
@@ -8,5 +8,5 @@ export default function appReducer(state, action) {
     ...state,
     cat,
     lists,
-  }
+  };
 }

@@ -1,7 +1,7 @@
-import { createList, getLists } from "../services/lists";
+import { createList, getLists } from '../services/lists';
 
 export const getListsAction = async (dispatch) => {
-  dispatch({ type: 'get-list-start'});
+  dispatch({ type: 'get-list-start' });
   const { data, error } = await getLists();
 
   if (error) {
@@ -12,10 +12,10 @@ export const getListsAction = async (dispatch) => {
   if (data) {
     dispatch({ type: 'get-list-success', lists: data });
   }
-}
+};
 
 export const addListAction = async (dispatch, name) => {
-  dispatch({ type: 'create-list-start'});
+  dispatch({ type: 'create-list-start' });
   const { data, error } = await createList({ name });
 
   if (error) {
@@ -26,4 +26,4 @@ export const addListAction = async (dispatch, name) => {
   if (data) {
     dispatch({ type: 'create-list-success', list: { id: data.id, name } });
   }
-}
+};
