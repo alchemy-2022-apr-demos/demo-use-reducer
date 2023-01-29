@@ -1,32 +1,34 @@
 import React, { useContext } from 'react';
-import { addCatLifeAction, removeCatLifeAction } from '../actions/cat.js';
+import { petCatAction, ignoreCatAction } from '../actions/cat.js';
 import { Context as ReducerContext } from '../reducer-provider.jsx';
 
 export default function Catponent() {
   const { state, dispatch } = useContext(ReducerContext);
-  const removeOneLife = (_e) => {
-    dispatch(removeCatLifeAction(1));
+  const ignoreCat = (_e) => {
+    dispatch(ignoreCatAction(1));
   };
-  const removeFiveLives = (_e) => {
-    dispatch(removeCatLifeAction(5));
+  const petVigorously = (_e) => {
+    dispatch(petCatAction(5));
   };
-  const addOneLife = (_e) => {
-    dispatch(addCatLifeAction(1));
+  const petNormally = (_e) => {
+    dispatch(petCatAction(1));
   };
 
-  return <article>
-    <dl>
-      <dt>Name</dt>
-      <dd>{state.name}</dd>
-      <dt>Lives</dt>
-      <dd>{state.lives}</dd>
-      <dt>Catus</dt>
-      <dd>{state.status}</dd>
-    </dl>
-    <fieldset>
-      <button onClick={removeOneLife}>-1 life</button>
-      <button onClick={removeFiveLives}>-5 lives</button>
-      <button onClick={addOneLife}>+1 life</button>
-    </fieldset>
-  </article>;
+  return (
+    <article>
+      <dl>
+        <dt>Name</dt>
+        <dd>{state.name}</dd>
+        <dt>Pets</dt>
+        <dd>{state.pets}</dd>
+        <dt>Catus</dt>
+        <dd>{state.status}</dd>
+      </dl>
+      <fieldset>
+        <button onClick={ignoreCat}>Ignore cat</button>
+        <button onClick={petVigorously}>Pet cat normaly</button>
+        <button onClick={petNormally}>Pet cat vigorously</button>
+      </fieldset>
+    </article>
+  );
 }

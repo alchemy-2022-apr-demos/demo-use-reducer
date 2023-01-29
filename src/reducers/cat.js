@@ -1,10 +1,10 @@
 export const catReducer = (state, action) => {
-  if(action.type == 'remove-cat-life') {
-    const newLives = state.lives - action.amount;
+  if (action.type == 'ignore-cat') {
+    const newPets = state.pets - 1;
     return {
       ...state,
-      lives: newLives,
-      status: newLives < 1 ? 'dead' : 'alive',
+      pets: newPets,
+      status: newPets > 4 ? 'happy' : 'sad',
     };
   } else {
     return state;

@@ -1,14 +1,12 @@
-
-export const removeCatLifeAction = (amount) => {
+export const petCatAction = (amount) => {
   return {
-    type: 'remove-cat-life',
+    type: 'pet-cat',
     amount,
   };
 };
 
-export const addCatLifeAction = (amount) => {
+export const ignoreCatAction = () => {
   return {
-    type: 'add-cat-life',
-    amount,
+    type: 'ignore-cat',
   };
 };
